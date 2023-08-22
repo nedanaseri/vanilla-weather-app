@@ -5,7 +5,7 @@ body {
   margin: 0 auto;
 }
 .weather-app {
-  max-width: 1000px;
+  max-width: 1080px;
   background-image: url("../images/background-day.png");
   background-position: center;
   background-repeat: 0 repeat;
@@ -35,11 +35,15 @@ h2 {
   font-weight: 400;
   padding: 0;
 }
+.input-group {
+  margin-left: 16px;
+}
 input.form-control {
   font-size: 14px;
   color: rgba(98, 105, 142, 0.773);
   border-radius: 8px 0px 0px 8px;
   border: 0;
+  z-index: 0;
 }
 input.form-contrl:hover {
   border: 1px solid rgb(9, 21, 126);
@@ -50,7 +54,7 @@ button#search-button {
   font-size: 14px;
   font-weight: 300;
   border: 0;
-  border-radius: 8px;
+  border-radius: 0 8px 8px 0;
   padding: 12px 24px 12px 24px;
   max-height: 44px;
 }
@@ -92,6 +96,7 @@ li#units {
   margin-top: 44px;
   margin-left: 40px;
 }
+
 li#weather-description {
   font-size: 20px;
   font-weight: 500;
@@ -108,9 +113,10 @@ ul#weather-info {
   padding: 0;
   line-height: 32px;
   margin-top: 32px;
+  margin-left: -32px;
 }
 img.icon {
-  margin-right: 4px;
+  margin-right: 8px;
 }
 p#units {
   font-size: 24px;
