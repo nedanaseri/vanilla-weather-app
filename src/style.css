@@ -98,12 +98,13 @@ li#units {
 }
 
 li#weather-description {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 500;
   color: white;
   padding: 0;
   list-style: none;
   margin-left: 40px;
+  text-transform: capitalize;
 }
 ul#weather-info {
   font-size: 14px;
