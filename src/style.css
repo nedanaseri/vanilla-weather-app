@@ -22,7 +22,7 @@ div.row.header {
 }
 
 h1#city-name {
-  font-size: 48px;
+  font-size: 44px;
   font-weight: 600;
   color: white;
   padding: 0;
@@ -104,7 +104,9 @@ li#weather-description {
   padding: 0;
   list-style: none;
   margin-left: 40px;
-  text-transform: capitalize;
+}
+li#weather-description:first-letter {
+  text-transform: uppercase;
 }
 ul#weather-info {
   font-size: 14px;
