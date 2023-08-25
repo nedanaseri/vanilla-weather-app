@@ -56,6 +56,68 @@ function displayTemperature(response) {
   feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+
+  switch (response.data.weather[0].icon) {
+    case "01d":
+      iconELement.setAttribute("src", `icons/01d.svg`);
+      break;
+    case "01n":
+      iconELement.setAttribute("src", `icons/01n.svg`);
+      break;
+    case "02d":
+      iconELement.setAttribute("src", `icons/02d.svg`);
+      break;
+    case "02n":
+      iconELement.setAttribute("src", `icons/02n.svg`);
+      break;
+    case "03d":
+      iconELement.setAttribute("src", `icons/03d.svg`);
+      break;
+    case "03n":
+      iconELement.setAttribute("src", `icons/03d.svg`);
+      break;
+    case "04d":
+      iconELement.setAttribute("src", `icons/04d.svg`);
+      break;
+    case "04n":
+      iconELement.setAttribute("src", `icons/04n.svg`);
+      break;
+    case "09d":
+      iconELement.setAttribute("src", `icons/09d.svg`);
+      break;
+    case "09n":
+      iconELement.setAttribute("src", `icons/09n.svg`);
+      break;
+    case "10d":
+      iconELement.setAttribute("src", `icons/10d.svg`);
+      break;
+    case "10n":
+      iconELement.setAttribute("src", `icons/10n.svg`);
+      break;
+    case "11d":
+      iconELement.setAttribute("src", `icons/11d.svg`);
+      break;
+    case "11n":
+      iconELement.setAttribute("src", `icons/11n.svg`);
+      break;
+    case "13d":
+      iconELement.setAttribute("src", `icons/13d.svg`);
+      break;
+    case "13n":
+      iconELement.setAttribute("src", `icons/13n.svg`);
+      break;
+    case "50d":
+      iconELement.setAttribute("src", `icons/50d.svg`);
+      break;
+    case "50n":
+      iconELement.setAttribute("src", `icons/50n.svg`);
+      break;
+    default:
+      iconELement.setAttribute("src", `icons/01d.svg`);
+      break;
+  }
+
+  iconELement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(city) {
