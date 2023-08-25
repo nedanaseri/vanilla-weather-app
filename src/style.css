@@ -5,7 +5,7 @@ body {
   margin: 0 auto;
 }
 .weather-app {
-  max-width: 1080px;
+  max-width: 1000px;
   background-image: url("../images/background-day.png");
   background-position: center;
   background-repeat: 0 repeat;
@@ -41,7 +41,7 @@ h2 {
   font-size: 14px;
   font-weight: 400;
   color: rgba(107, 116, 166, 0.773);
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid white;
   height: 44px;
   padding-right: 24px;
@@ -56,7 +56,7 @@ h2 {
   font-weight: 400;
   outline: 0;
   border: 0;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 12px 24px 12px 24px;
   height: 44px;
   margin-left: -40px;
@@ -73,7 +73,7 @@ h2 {
   width: 44px;
   height: 44px;
   border: 0;
-  border-radius: 12px;
+  border-radius: 10px;
   margin: 0;
 }
 #location-button:hover {
@@ -83,12 +83,23 @@ h2 {
 div.row.body {
   align-items: center;
 }
+.current-weather {
+  justify-content: start;
+  display: flex;
+  align-items: center;
+}
 h3#temperature {
   font-size: 120px;
   color: white;
   font-weight: 300;
   padding: 0;
   line-height: 100px;
+  margin: 0;
+}
+.current-weather > ul {
+  margin: 0;
+  margin-left: -12px;
+  margin-top: 24px;
 }
 li#units {
   font-size: 20px;
@@ -96,8 +107,6 @@ li#units {
   color: white;
   padding: 0;
   list-style: none;
-  margin-top: 44px;
-  margin-left: 40px;
 }
 
 li#weather-description {
@@ -106,10 +115,15 @@ li#weather-description {
   color: white;
   padding: 0;
   list-style: none;
-  margin-left: 40px;
 }
 li#weather-description:first-letter {
   text-transform: uppercase;
+}
+
+#weather-icon {
+  align-items: center;
+  width: 196px;
+  margin-top: -32px;
 }
 ul#weather-info {
   font-size: 14px;
@@ -118,8 +132,8 @@ ul#weather-info {
   list-style: none;
   padding: 0;
   line-height: 32px;
-  margin-top: 32px;
-  margin-left: -32px;
+  margin-top: 20px;
+  margin-left: -24px;
 }
 img.icon {
   margin-right: 8px;
