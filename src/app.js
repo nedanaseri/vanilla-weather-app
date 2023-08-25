@@ -49,6 +49,7 @@ function displayTemperature(response) {
   let humidityElement = document.querySelector("#humidity-level");
   let windElement = document.querySelector("#wind-speed");
   let dateHourElement = document.querySelector("#date-hour");
+  let iconELement = document.querySelector("#weather-icon");
 
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
