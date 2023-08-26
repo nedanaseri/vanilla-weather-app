@@ -39,6 +39,53 @@ if (hours < 10) {
   hours = `0${hours}`;
 }
 let h2 = document.querySelector("h2");
+
+if (
+  (hours > 7 && ampm == "PM") ||
+  (hours < 7 && ampm == "AM") ||
+  (hours == 12 && ampm == "AM")
+) {
+  let formControl = document.querySelector("#city-input");
+  formControl.classList.add("nightmode");
+}
+
+if (
+  (hours > 7 && ampm == "PM") ||
+  (hours < 7 && ampm == "AM") ||
+  (hours == 12 && ampm == "AM")
+) {
+  let searchButton = document.querySelector("#search-button");
+  searchButton.classList.add("nightmode");
+}
+if (
+  (hours > 7 && ampm == "PM") ||
+  (hours < 7 && ampm == "AM") ||
+  (hours == 12 && ampm == "AM")
+) {
+  let locationButton = document.querySelector("#location-button");
+  locationButton.classList.add("nightmode");
+  let locationIcon = document.querySelector("#location-icon");
+  locationIcon.setAttribute("src", `icons/location-dark.svg`);
+}
+
+if (
+  (hours > 7 && ampm == "PM") ||
+  (hours < 7 && ampm == "AM") ||
+  (hours == 12 && ampm == "AM")
+) {
+  let weatherForecast = document.querySelector(".weather-forecast");
+  weatherForecast.classList.add("nightmode");
+}
+
+if (
+  (hours > 7 && ampm == "PM") ||
+  (hours < 7 && ampm == "AM") ||
+  (hours == 12 && ampm == "AM")
+) {
+  let weatherBackground = document.querySelector(".weather-app");
+  weatherBackground.classList.add("nightmode");
+}
+
 h2.innerHTML = `${day}, ${dayNumber} ${month} ${year} | ${hours} : ${minutes} ${ampm}`;
 
 function displayTemperature(response) {

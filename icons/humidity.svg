@@ -1,4 +1,4 @@
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M16 15.089C16 18.9059 12.866 22 9 22C5.13401 22 2 18.9059 2 15.089C2 10.2381 7.73771 4.13295 9 3C10.1475 4.01965 16 10.6259 16 15.089Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
-<ellipse cx="19.5" cy="4.5" rx="2.49998" ry="2.5" stroke="white" stroke-width="2"/>
+<path d="M15.6001 14.7801C15.6001 18.2152 12.7794 21 9.30003 21C5.82062 21 3 18.2152 3 14.7801C3 10.4142 8.16396 4.91956 9.30003 3.8999C10.3328 4.81759 15.6001 10.7632 15.6001 14.7801Z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+<ellipse cx="18.75" cy="5.25001" rx="2.24999" ry="2.25001" stroke="white" stroke-width="1.6"/>
 </svg>
