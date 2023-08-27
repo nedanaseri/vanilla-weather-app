@@ -39,7 +39,7 @@ h1#city-name {
   color: white;
   padding: 0;
   line-height: 44px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 h2 {
   font-size: 16px;
@@ -50,7 +50,7 @@ h2 {
 
 .form-control {
   background-color: rgba(255, 254, 254, 0.953);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   border-radius: 10px;
   height: 44px;
@@ -89,7 +89,7 @@ input::placeholder {
 .form-control.nightmode {
   background-color: #273161;
   color: white;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   border-radius: 10px;
   height: 44px;

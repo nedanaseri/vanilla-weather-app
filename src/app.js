@@ -41,8 +41,8 @@ if (hours < 10) {
 let h2 = document.querySelector("h2");
 
 if (
-  (hours > 7 && ampm == "PM") ||
-  (hours < 7 && ampm == "AM") ||
+  (hours > 6 && ampm == "PM") ||
+  (hours < 6 && ampm == "AM") ||
   (hours == 12 && ampm == "AM")
 ) {
   let formControl = document.querySelector("#city-input");
@@ -50,16 +50,16 @@ if (
 }
 
 if (
-  (hours > 7 && ampm == "PM") ||
-  (hours < 7 && ampm == "AM") ||
+  (hours > 6 && ampm == "PM") ||
+  (hours < 6 && ampm == "AM") ||
   (hours == 12 && ampm == "AM")
 ) {
   let searchButton = document.querySelector("#search-button");
   searchButton.classList.add("nightmode");
 }
 if (
-  (hours > 7 && ampm == "PM") ||
-  (hours < 7 && ampm == "AM") ||
+  (hours > 6 && ampm == "PM") ||
+  (hours < 6 && ampm == "AM") ||
   (hours == 12 && ampm == "AM")
 ) {
   let locationButton = document.querySelector("#location-button");
@@ -69,8 +69,8 @@ if (
 }
 
 if (
-  (hours > 7 && ampm == "PM") ||
-  (hours < 7 && ampm == "AM") ||
+  (hours > 6 && ampm == "PM") ||
+  (hours < 6 && ampm == "AM") ||
   (hours == 12 && ampm == "AM")
 ) {
   let weatherForecast = document.querySelector(".weather-forecast");
@@ -78,8 +78,8 @@ if (
 }
 
 if (
-  (hours > 7 && ampm == "PM") ||
-  (hours < 7 && ampm == "AM") ||
+  (hours > 6 && ampm == "PM") ||
+  (hours < 6 && ampm == "AM") ||
   (hours == 12 && ampm == "AM")
 ) {
   let weatherBackground = document.querySelector(".weather-app");
