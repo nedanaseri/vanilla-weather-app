@@ -46,6 +46,7 @@ h2 {
   color: white;
   font-weight: 400;
   padding: 0;
+  opacity: 0.8;
 }
 
 .form-control {
@@ -226,6 +227,7 @@ ul#weather-info {
   line-height: 32px;
   margin-top: 20px;
   margin-left: -24px;
+  opacity: 0.8;
 }
 img.icon {
   margin-right: 8px;
@@ -260,6 +262,7 @@ h4 {
   font-size: 12px;
   color: white;
   font-weight: 400;
+  opacity: 0.7;
 }
 img.weekday-weather {
   display: block;
@@ -267,7 +270,7 @@ img.weekday-weather {
   width: 80px;
   padding: 8px;
 }
-p.temperature {
+p.forecast-temp {
   font-size: 16px;
   font-weight: 500;
   margin: 0;
@@ -277,6 +280,7 @@ p.weather-type {
   font-size: 12px;
   font-weight: 300;
   color: rgb(255, 255, 255);
+  opacity: 0.7;
 }
 
 div.footer {
