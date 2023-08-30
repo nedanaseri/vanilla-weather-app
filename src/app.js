@@ -169,6 +169,34 @@ function displayTemperature(response) {
   iconELement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let weekDays = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
+
+  let forecastHTML = `<div class="row">`;
+
+  weekDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col weekdays">
+              <h4>${day}</h4>
+              <img src="icons/50d.svg" alt="" class="weekday-weather" />
+              <p class="forecast-temp">
+                <span class="forecast-temp-max">31°</span> -
+                <span class="forecast-temp-min">28°</span>
+              </p>
+              <p class="weather-type">Fog</p>
+            </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 function search(city) {
   let apiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -226,3 +254,4 @@ let celsiuslink = document.querySelector("#celsius-link");
 celsiuslink.addEventListener("click", displayCelsiusTemperature);
 
 search("Tehran");
+displayForecast();

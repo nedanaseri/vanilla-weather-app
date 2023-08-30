@@ -18,7 +18,7 @@ body {
 }
 
 .weather-app.nightmode {
-  max-width: 1080px;
+  max-width: 960px;
   background-image: url("../images/background-night.png");
   background-position: center;
   background-repeat: 0 repeat;
@@ -237,7 +237,7 @@ ul#weather-info {
   opacity: 0.8;
 }
 
-.row.weather-forecast {
+.weather-forecast {
   background-color: #092178a2;
   margin: 40px 0 0 0;
   padding: 32px 24px 16px 24px;
@@ -246,7 +246,7 @@ ul#weather-info {
   max-height: 210px;
 }
 
-.row.weather-forecast.nightmode {
+.weather-forecast.nightmode {
   background-color: #30326353;
   margin: 40px 0 0 0;
   padding: 32px 24px 16px 24px;
