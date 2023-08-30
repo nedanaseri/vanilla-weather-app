@@ -139,7 +139,7 @@ input::placeholder {
   height: 44px;
   border: 0;
   border-radius: 10px;
-  margin: 0;
+  margin-left: 4px;
 }
 #location-button:hover {
   background-color: #1828b9;
@@ -157,7 +157,7 @@ input::placeholder {
   height: 44px;
   border: 0;
   border-radius: 10px;
-  margin: 0;
+  margin-left: 4px;
 }
 div.row.body {
   align-items: center;
@@ -214,10 +214,9 @@ li#weather-description:first-letter {
 }
 
 #weather-icon {
-  align-items: center;
   width: 200px;
-  margin-top: -8px;
-  margin-left: 12px;
+  margin-top: -40px;
+  margin-left: -12px;
 }
 
 img.icon {
