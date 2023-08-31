@@ -5,7 +5,7 @@ body {
   margin: 0 auto;
 }
 .weather-app {
-  max-width: 960px;
+  max-width: 976px;
   background-image: url("../images/background-day.png");
   background-position: center;
   background-repeat: 0 repeat;
@@ -18,7 +18,7 @@ body {
 }
 
 .weather-app.nightmode {
-  max-width: 960px;
+  max-width: 976px;
   background-image: url("../images/background-night.png");
   background-position: center;
   background-repeat: 0 repeat;
