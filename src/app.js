@@ -1,92 +1,84 @@
-let date = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[date.getDay()];
-let dayNumber = date.getDate();
-let months = [
-  "Januaray",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let month = months[date.getMonth()];
-let year = date.getFullYear();
-let hours = date.getHours();
+function formatDate(timestamp, timezone = null) {
+  let localtime = new Date(timestamp);
+  let offset = localtime.getTimezoneOffset();
+  let date1 = new Date(localtime);
+  date1.setSeconds(date1.getSeconds() + timezone);
+  let date = new Date(date1.getTime() + offset * 60 * 1000);
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  let dayNumber = date.getDate();
+  let months = [
+    "Januaray",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[date.getMonth()];
+  let year = date.getFullYear();
+  let hours = date.getHours();
 
-let minutes = date.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let ampm = hours >= 12 ? "PM" : "AM";
-hours = hours % 12;
-hours = hours ? hours : 12;
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let h2 = document.querySelector("h2");
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let ampm = hours >= 12 ? "PM" : "AM";
+  hours = hours % 12;
+  hours = hours ? hours : 12;
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let h2 = document.querySelector("h2");
 
-if (
-  (hours > 6 && ampm == "PM") ||
-  (hours < 6 && ampm == "AM") ||
-  (hours == 12 && ampm == "AM")
-) {
-  let formControl = document.querySelector("#city-input");
-  formControl.classList.add("nightmode");
-}
+  if (
+    (hours > 6 && ampm == "PM") ||
+    (hours < 6 && ampm == "AM") ||
+    (hours == 12 && ampm == "AM")
+  ) {
+    let formControl = document.querySelector("#city-input");
+    formControl.classList.add("nightmode");
+    let searchButton = document.querySelector("#search-button");
+    searchButton.classList.add("nightmode");
+    let locationButton = document.querySelector("#location-button");
+    locationButton.classList.add("nightmode");
+    let locationIcon = document.querySelector("#location-icon");
+    locationIcon.setAttribute("src", `icons/location-dark.svg`);
+    let weatherForecast = document.querySelector(".weather-forecast");
+    weatherForecast.classList.add("nightmode");
+    let weatherBackground = document.querySelector(".weather-app");
+    weatherBackground.classList.add("nightmode");
+  } else {
+    let formControl = document.querySelector("#city-input");
+    formControl.classList.remove("nightmode");
+    let searchButton = document.querySelector("#search-button");
+    searchButton.classList.remove("nightmode");
+    let locationButton = document.querySelector("#location-button");
+    locationButton.classList.remove("nightmode");
+    let locationIcon = document.querySelector("#location-icon");
+    locationIcon.setAttribute("src", `icons/location-light.svg`);
+    let weatherForecast = document.querySelector(".weather-forecast");
+    weatherForecast.classList.remove("nightmode");
+    let weatherBackground = document.querySelector(".weather-app");
+    weatherBackground.classList.remove("nightmode");
+  }
 
-if (
-  (hours > 6 && ampm == "PM") ||
-  (hours < 6 && ampm == "AM") ||
-  (hours == 12 && ampm == "AM")
-) {
-  let searchButton = document.querySelector("#search-button");
-  searchButton.classList.add("nightmode");
+  h2.innerHTML = `${day}, ${dayNumber} ${month} ${year} | ${hours} : ${minutes} ${ampm}`;
 }
-if (
-  (hours > 6 && ampm == "PM") ||
-  (hours < 6 && ampm == "AM") ||
-  (hours == 12 && ampm == "AM")
-) {
-  let locationButton = document.querySelector("#location-button");
-  locationButton.classList.add("nightmode");
-  let locationIcon = document.querySelector("#location-icon");
-  locationIcon.setAttribute("src", `icons/location-dark.svg`);
-}
-
-if (
-  (hours > 6 && ampm == "PM") ||
-  (hours < 6 && ampm == "AM") ||
-  (hours == 12 && ampm == "AM")
-) {
-  let weatherForecast = document.querySelector(".weather-forecast");
-  weatherForecast.classList.add("nightmode");
-}
-
-if (
-  (hours > 6 && ampm == "PM") ||
-  (hours < 6 && ampm == "AM") ||
-  (hours == 12 && ampm == "AM")
-) {
-  let weatherBackground = document.querySelector(".weather-app");
-  weatherBackground.classList.add("nightmode");
-}
-
-h2.innerHTML = `${day}, ${dayNumber} ${month} ${year} | ${hours} : ${minutes} ${ampm}`;
 
 function getDailyForecast(coordinates) {
   let apiKey = "50c2acd53349fabd54f52b93c8650d37";
@@ -111,6 +103,7 @@ function displayTemperature(response) {
   feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  formatDate(response.data.dt * 1000, response.data.timezone);
 
   switch (response.data.weather[0].icon) {
     case "01d":
@@ -177,28 +170,110 @@ function displayTemperature(response) {
   getDailyForecast(response.data.coord);
 }
 
-function displayForecast(response) {
-  console.log(response.data.daily);
-  let forecastElement = document.querySelector("#forecast");
+function formatDays(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
 
-  let weekDays = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
 
-  weekDays.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      let src = "";
+      switch (forecastDay.weather[0].icon) {
+        case "01d":
+          src = `icons/01d.svg`;
+          break;
+        case "01n":
+          src = `icons/01n.svg`;
+          break;
+        case "02d":
+          src = `icons/02d.svg`;
+          break;
+        case "02n":
+          src = `icons/02n.svg`;
+          break;
+        case "03d":
+          src = `icons/03d.svg`;
+          break;
+        case "03n":
+          src = `icons/03d.svg`;
+          break;
+        case "04d":
+          src = `icons/04d.svg`;
+          break;
+        case "04n":
+          src = `icons/04n.svg`;
+          break;
+        case "09d":
+          src = `icons/09d.svg`;
+          break;
+        case "09n":
+          src = `icons/09n.svg`;
+          break;
+        case "10d":
+          src = `icons/10d.svg`;
+          break;
+        case "10n":
+          src = `icons/10n.svg`;
+          break;
+        case "11d":
+          src = `icons/11d.svg`;
+          break;
+        case "11n":
+          src = `icons/11n.svg`;
+          break;
+        case "13d":
+          src = `icons/13d.svg`;
+          break;
+        case "13n":
+          src = `icons/13n.svg`;
+          break;
+        case "50d":
+          src = `icons/50d.svg`;
+          break;
+        case "50n":
+          src = `icons/50n.svg`;
+          break;
+        default:
+          src = `icons/01d.svg`;
+          break;
+      }
+
+      let maxTemp = Math.round(forecastDay.temp.max);
+      let minTemp = Math.round(forecastDay.temp.min);
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col weekdays">
-              <h4>${day}</h4>
-              <img src="icons/50d.svg" alt="" class="weekday-weather" />
+              <h4>${formatDays(forecastDay.dt)}</h4>
+              <img src="${src}" alt="${
+          forecastDay.weather[0].description
+        }" class="weekday-weather" />
               <p class="forecast-temp">
-                <span class="forecast-temp-max">31°</span> -
-                <span class="forecast-temp-min">28°</span>
+                <span class="forecast-temp-max">${maxTemp}°</span> -
+                <span class="forecast-temp-min">${minTemp}°</span>
               </p>
-              <p class="weather-type">Fog</p>
+              <p class="weather-type">${forecastDay.weather[0].description}</p>
             </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
