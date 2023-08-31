@@ -194,7 +194,7 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index < 6) {
+    if (index < 5) {
       let src = "";
       switch (forecastDay.weather[0].icon) {
         case "01d":

@@ -283,13 +283,16 @@ p.weather-type {
   opacity: 0.7;
 }
 
-div.footer {
+footer {
   font-size: 12px;
-  font-weight: 500;
-  color: #304369;
+  font-weight: 400;
+  color: #647089;
   align-items: center;
   padding-top: 8px;
   margin: 0 auto;
   width: 50%;
   text-align: center;
+}
+footer > a {
+  color: rgb(237, 152, 33);
 }
