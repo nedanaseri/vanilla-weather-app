@@ -287,7 +287,7 @@ p.weather-type {
 footer {
   font-size: 12px;
   font-weight: 400;
-  color: #647089;
+  color: #7684a2;
   align-items: center;
   padding-top: 8px;
   margin: 0 auto;
@@ -295,5 +295,5 @@ footer {
   text-align: center;
 }
 footer > a {
-  color: rgb(228, 144, 41);
+  color: rgb(26, 130, 234);
 }
