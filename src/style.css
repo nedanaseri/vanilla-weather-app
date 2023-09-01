@@ -1,5 +1,9 @@
 body {
   font-family: "Poppins", sans-serif;
+  background-image: url("../images/fullpage-bg.png");
+  background-position: center;
+  background-repeat: 0 repeat;
+  background-size: cover;
 }
 .container {
   margin: 0 auto;
@@ -234,11 +238,10 @@ ul#weather-info {
   line-height: 28px;
   margin-top: 20px;
   margin-left: -24px;
-  opacity: 0.8;
 }
 
 .weather-forecast {
-  background-color: #0921789f;
+  background-color: rgba(10, 36, 128, 0.6);
   margin: 48px 0 0 0;
   padding: 32px 24px 16px 24px;
   max-width: 100%;
@@ -287,7 +290,7 @@ p.weather-type {
 footer {
   font-size: 12px;
   font-weight: 400;
-  color: #7684a2;
+  color: #59657e;
   align-items: center;
   padding-top: 8px;
   margin: 0 auto;
